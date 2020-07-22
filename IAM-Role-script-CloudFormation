@@ -1,0 +1,35 @@
+#Creating a new role for your AWS account using cloud Formation
+
+#JSON syntax 
+
+{
+  "Type" : "AWS::IAM::Role",
+  "Properties" : {
+      "AssumeRolePolicyDocument" : Json,
+      "Description" : String,
+      "ManagedPolicyArns" : [ String, ... ],
+      "MaxSessionDuration" : Integer,
+      "Path" : String,
+      "PermissionsBoundary" : String,
+      "Policies" : [ Policy, ... ],
+      "RoleName" : String,
+      "Tags" : [ Tag, ... ]
+    }
+}
+
+#YAML syntax
+
+Type: AWS::IAM::Role
+Properties: C
+  AssumeRolePolicyDocument: Json
+  Description: String
+  ManagedPolicyArns: 
+    - String
+  MaxSessionDuration: Integer
+  Path: String
+  PermissionsBoundary: String
+  Policies: 
+    - Policy
+  RoleName: String
+  Tags: 
+    - Tag
