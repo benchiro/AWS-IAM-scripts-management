@@ -1,0 +1,27 @@
+#Creating Policy using cloud formation that is embedded in the specified IAM user, group, or role
+
+#JSON syntax
+{
+  "Type" : "AWS::IAM::Policy",
+  "Properties" : {
+      "Groups" : [ String, ... ],
+      "PolicyDocument" : Json,
+      "PolicyName" : String,
+      "Roles" : [ String, ... ],
+      "Users" : [ String, ... ]
+    }
+}
+
+
+#YAML syntax 
+
+Type: AWS::IAM::Policy
+Properties: 
+  Groups: 
+    - String
+  PolicyDocument: Json
+  PolicyName: String
+  Roles: 
+    - String
+  Users: 
+    - String
