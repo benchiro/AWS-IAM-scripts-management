@@ -1,0 +1,23 @@
+#creating groups using CloudFormation 
+#JSON Syntax for 
+
+{
+  "Type" : "AWS::IAM::Group",
+  "Properties" : {
+      "GroupName" : String,
+      "ManagedPolicyArns" : [ String, ... ],
+      "Path" : String,
+      "Policies" : [ Policy, ... ]
+    }
+}
+
+#YAML Syntax using Cloud Formation
+
+Type: AWS::IAM::Group
+Properties: 
+  GroupName: String
+  ManagedPolicyArns: 
+    - String
+  Path: String
+  Policies: 
+    - Policy
