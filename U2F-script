@@ -1,0 +1,35 @@
+
+{
+    "Version": "2012-10-17",
+   "Statement": [
+
+{
+    "Sid": "AllowManageOwnUserMFA",
+     "Effect": "Allow",
+     "Action": [
+     "iam:DeactivateMFADevice",
+     "iam:EnableMFADevice",
+     "iam:GetUser",
+     "iam:ListMFADevices",
+     "iam:ResyncMFADevice"
+ ],
+     "Resource": "arn:aws:iam::*:user/${aws:username}"
+   },
+ {
+    "Sid": "DenyAllExceptListedIfNoMFA",
+    "Effect": "Deny",
+    "NotAction": [
+    "iam:EnableMFADevice",
+    "iam:GetUser",
+    "iam:ListMFADevices",
+    "iam:ResyncMFADevice"
+ ],
+    "Resource": "arn:aws:iam::*:user/${aws:username}",
+    "Condition": {
+    "BoolIfExists": {
+    "aws:MultiFactorAuthPresent": "false"
+  }
+  }
+  }
+  ]
+ }
